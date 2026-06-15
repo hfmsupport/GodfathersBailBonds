@@ -1,9 +1,6 @@
 import { notFound } from 'next/navigation'
-import { Header } from '@/components/header'
-import { Footer } from '@/components/footer'
 import { getPostBySlug } from '@/lib/wordpress'
-import { cleanContent } from '@/lib/content'
-import { Phone } from 'lucide-react'
+import { BlogPostLayout } from '@/components/BlogPostLayout'
 
 export const dynamicParams = false
 
@@ -102,47 +99,5 @@ export default async function PostPage({
     notFound()
   }
 
-  return (
-    <main className="bg-white w-full">
-      <Header />
-
-      <section className="w-full bg-gray-900 py-16">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-gray-400 text-sm mb-4">
-            {new Date(post.date).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </p>
-          <h1
-            className="text-3xl md:text-4xl font-bold text-[#C9A961] leading-tight"
-            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-          />
-        </div>
-      </section>
-
-      <section className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div
-          className="prose prose-lg max-w-none prose-headings:text-gray-900 prose-a:text-yellow-600 prose-img:rounded-lg"
-          dangerouslySetInnerHTML={{ __html: cleanContent(post.content.rendered) }}
-        />
-      </section>
-
-      <section className="w-full bg-gray-900 py-12">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <p className="text-white text-xl font-bold mb-6">Need Help Now? Call 713-224-3600</p>
-          <a
-            href="tel:7132243600"
-            className="inline-flex items-center gap-3 bg-[#C9A961] hover:bg-yellow-600 text-white px-8 py-4 rounded font-bold text-lg transition"
-          >
-            <Phone size={24} />
-            Call 713-224-3600
-          </a>
-        </div>
-      </section>
-
-      <Footer />
-    </main>
-  )
+  return <BlogPostLayout post={post} />
 }
