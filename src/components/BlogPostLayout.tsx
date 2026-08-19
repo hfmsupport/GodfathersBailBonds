@@ -48,7 +48,7 @@ export async function BlogPostLayout({ post }: { post: WPPost }) {
           <img
             src={post.featuredImageUrl}
             alt={post.title.rendered}
-            className="absolute inset-0 w-full h-full object-cover opacity-30"
+            className="absolute inset-0 w-full h-full object-cover"
           />
         ) : null}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d]/60 to-[#080808]" />
