@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Phone, ChevronDown, Menu, X } from 'lucide-react'
 
 export function Header() {
@@ -10,15 +11,16 @@ export function Header() {
 
   return (
     <header className="w-full bg-white border-b border-gray-200 relative z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2">
-          <div className="w-12 h-12 rounded-full border-2 border-yellow-600 flex items-center justify-center">
-            <span className="text-yellow-600 font-bold text-lg">G</span>
-          </div>
-          <div className="hidden sm:block">
-            <p className="text-yellow-600 font-bold text-sm">GODFATHER&apos;S</p>
-            <p className="text-gray-600 text-xs">BAIL BONDS</p>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/images/logo.png"
+            alt="Godfather's Bail Bonds"
+            width={164}
+            height={129}
+            className="w-[164px] h-auto"
+            priority
+          />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8 text-gray-800 font-semibold text-sm">

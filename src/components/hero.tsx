@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, Clock, Award, Shield } from 'lucide-react'
 
-const HERO_IMAGE = 'https://godfathersbailbonds.us/wp-content/uploads/2024/11/godfather-banner.webp'
+const HERO_IMAGE = '/wp-content/uploads/2024/11/godfather-banner.webp'
 
 const trustItems = [
   { Icon: Clock,  title: 'OPEN 24/7/365',        desc: 'We are here when you need us most.' },

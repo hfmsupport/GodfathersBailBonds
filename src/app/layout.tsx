@@ -10,26 +10,12 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'v0 App',
-  description: 'Created with v0',
-  generator: 'v0.app',
-  robots: { index: false, follow: false },
+  title: "Godfather's Bail Bonds | Houston, TX | 713-224-3600",
+  description: 'Fast, professional bail bond services in Houston and Harris County. Open 24/7/365. Call 713-224-3600 anytime. Licensed bail bondsman — License #74603.',
+  robots: { index: true, follow: true },
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: '/images/logo.png',
+    apple: '/images/logo.png',
   },
 }
 

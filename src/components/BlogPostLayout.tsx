@@ -2,7 +2,8 @@ import Link from 'next/link'
 import { Phone, ChevronRight, Calendar } from 'lucide-react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-import { cleanContent } from '@/lib/content'
+import { cleanContent, splitFaqContent } from '@/lib/content'
+import { FaqAccordion } from '@/components/FaqAccordion'
 import { getRecentPosts } from '@/lib/wordpress'
 
 const SERVICE_LINKS = [
@@ -31,6 +32,7 @@ type RecentPost = {
 export async function BlogPostLayout({ post }: { post: WPPost }) {
   const recentPosts: RecentPost[] = await getRecentPosts(5)
   const cleaned = cleanContent(post.content.rendered)
+  const { mainContent, faqItems } = splitFaqContent(cleaned)
   const dateStr = new Date(post.date).toLocaleDateString('en-US', {
     year: 'numeric', month: 'long', day: 'numeric',
   })
@@ -73,7 +75,8 @@ export async function BlogPostLayout({ post }: { post: WPPost }) {
 
           {/* Content */}
           <article>
-            <div className="godfather-content" dangerouslySetInnerHTML={{ __html: cleaned }} />
+            <div className="godfather-content" dangerouslySetInnerHTML={{ __html: mainContent }} />
+            {faqItems.length > 0 && <FaqAccordion items={faqItems} />}
           </article>
 
           {/* Sidebar */}

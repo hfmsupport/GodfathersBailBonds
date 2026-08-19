@@ -2,15 +2,15 @@
 
 import Link from 'next/link'
 import { useEffect, useRef } from 'react'
-import { Landmark, Building2, Car, Pill, UserRound, Scale } from 'lucide-react'
+import { Landmark, Building2, Car, Pill, UserRound, Gavel } from 'lucide-react'
 
 const services = [
-  { Icon: Landmark,  label: 'HARRIS COUNTY\nBAIL BONDS',    href: '/harris-county-bail-bonds/' },
-  { Icon: Building2, label: 'HOUSTON\nBAIL BONDS',          href: '/houston-bail-bonds/' },
-  { Icon: Car,       label: 'DUI\nBONDS',                   href: '/the-bail-bonds-process/' },
-  { Icon: Pill,      label: 'DRUG\nCHARGES',                href: '/types-of-bonds/' },
-  { Icon: UserRound, label: 'DOMESTIC VIOLENCE\nBONDS',     href: '/types-of-bonds/' },
-  { Icon: Scale,     label: 'FEDERAL\nBONDS',               href: '/types-of-bonds/' },
+  { Icon: Landmark,  label: 'HARRIS COUNTY\nBAIL BONDS',          href: '/harris-county-bail-bonds/' },
+  { Icon: Building2, label: 'HOUSTON\nBAIL BONDS',                href: '/houston-bail-bonds/' },
+  { Icon: Car,       label: 'DUI/DRIVING WHILE\nINTOXICATED',     href: '/the-bail-bonds-process/' },
+  { Icon: Pill,      label: 'DRUG\nCHARGES',                      href: '/types-of-bonds/' },
+  { Icon: UserRound, label: 'DOMESTIC\nVIOLENCE',                 href: '/types-of-bonds/' },
+  { Icon: Gavel,     label: 'THEFT/\nFRAUD',                      href: '/types-of-bonds/' },
 ]
 
 export function Services() {

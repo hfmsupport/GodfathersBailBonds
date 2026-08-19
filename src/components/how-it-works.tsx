@@ -6,7 +6,7 @@ import { Phone, Search, CreditCard, Home } from 'lucide-react'
 const steps = [
   { Icon: Phone,      number: 1, title: 'CALL US ANYTIME',           desc: 'We are open 24/7/365. One call is all it takes.' },
   { Icon: Search,     number: 2, title: 'WE FIND THE BOND DETAILS',  desc: 'We handle the paperwork and court details for you.' },
-  { Icon: CreditCard, number: 3, title: 'CHOOSE A PAYMENT PLAN',     desc: 'Flexible payment options and installment plans available.' },
+  { Icon: CreditCard, number: 3, title: 'CHOOSE A PAYMENT PLAN',     desc: 'We accept Cash App, Venmo, and Zelle. Installment plans available.' },
   { Icon: Home,       number: 4, title: 'WE GET THEM RELEASED',      desc: 'Fast, discreet and professional. Back home within hours.' },
 ]
 

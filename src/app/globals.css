@@ -457,6 +457,21 @@
   border-top: 1px solid rgba(201, 168, 76, 0.2);
   margin: 1.5rem 0;
 }
+/* WP callout / tip / notice boxes — border-left remains in style attr after bg strip */
+.godfather-content [style*="border-left"],
+.godfather-content .has-background,
+.godfather-content .wp-block-group {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-left: 3px solid #C9A84C !important;
+  padding: 1rem 1.25rem !important;
+  border-radius: 0 4px 4px 0;
+  margin: 1rem 0;
+}
+.godfather-content [style*="border-left"] p,
+.godfather-content [style*="border-left"] li,
+.godfather-content [style*="border-left"] strong {
+  color: #d1d5db !important;
+}
 
 /* ========== GLOBAL UX ========== */
 html { scroll-behavior: smooth; }
