@@ -15,11 +15,12 @@ const SERVICE_LINKS = [
 ]
 
 interface WPPost {
-  title:    { rendered: string }
-  content:  { rendered: string }
-  date:     string
-  excerpt?: { rendered: string }
-  slug?:    string
+  title:            { rendered: string }
+  content:          { rendered: string }
+  date:             string
+  excerpt?:         { rendered: string }
+  slug?:            string
+  featuredImageUrl?: string | null
 }
 
 type RecentPost = {
@@ -43,7 +44,14 @@ export async function BlogPostLayout({ post }: { post: WPPost }) {
 
       {/* ════════════════ HERO ═══ */}
       <section className="relative w-full min-h-[320px] flex items-end overflow-hidden bg-[#080808]">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d] to-[#080808]" />
+        {post.featuredImageUrl ? (
+          <img
+            src={post.featuredImageUrl}
+            alt={post.title.rendered}
+            className="absolute inset-0 w-full h-full object-cover opacity-30"
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d0d0d]/60 to-[#080808]" />
         <div className="absolute left-0 top-10 bottom-10 w-[3px] bg-gradient-to-b from-transparent via-[#C9A84C] to-transparent" />
 
         <div className="relative z-10 max-w-4xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-14">

@@ -51,7 +51,14 @@ export async function getPostBySlug(slug: string) {
   })
   if (!res.ok) return null
   const posts = await res.json()
-  return posts[0] ?? null
+  const post = posts[0] ?? null
+  if (!post) return null
+  // Resolve featured image URL
+  if (post.featured_media) {
+    const imgUrl = await getMediaUrl(post.featured_media)
+    post.featuredImageUrl = imgUrl ?? null
+  }
+  return post
 }
 
 export async function getMediaUrl(id: number): Promise<string | null> {
