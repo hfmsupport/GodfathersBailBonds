@@ -1,13 +1,13 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { getAllPosts, getPostBySlug } from '@/lib/wordpress'
+import { getAllPostSlugs, getPostBySlug } from '@/lib/sanity'
 import { BlogPostLayout } from '@/components/BlogPostLayout'
 
 export const dynamicParams = false
 
 export async function generateStaticParams() {
-  const posts = await getAllPosts()
-  return posts.map((p) => ({ slug: p.slug }))
+  const slugs = await getAllPostSlugs()
+  return slugs.map((slug) => ({ slug }))
 }
 
 export async function generateMetadata({
@@ -20,24 +20,37 @@ export async function generateMetadata({
 
   if (!post) return {}
 
-  const title = post.title.rendered.replace(/<[^>]+>/g, '')
-  const description = post.excerpt.rendered.replace(/<[^>]+>/g, '').trim()
-  const url = `https://godfathersbailbonds.vercel.app/${slug}`
+  // Decode HTML entities that may remain in title from WordPress migration
+  const title = (post.metaTitle || post.title)
+    .replace(/&#\d+;/g, (m) => {
+      const code = parseInt(m.slice(2, -1), 10)
+      return String.fromCharCode(code)
+    })
+    .replace(/&amp;/g, '&')
+    .replace(/&nbsp;/g, ' ')
+
+  const description = (post.metaDescription || post.excerpt || '').replace(/\s+/g, ' ').trim()
+  const canonical = `/${slug}/`
 
   return {
     title,
     description,
+    alternates: { canonical },
     openGraph: {
       title,
       description,
-      url,
+      url: canonical,
       type: 'article',
       siteName: "Godfather's Bail Bonds",
+      ...(post.featuredImageUrl
+        ? { images: [{ url: post.featuredImageUrl, width: 1200, alt: title }] }
+        : {}),
     },
     twitter: {
-      card: 'summary',
+      card: 'summary_large_image',
       title,
       description,
+      ...(post.featuredImageUrl ? { images: [post.featuredImageUrl] } : {}),
     },
   }
 }

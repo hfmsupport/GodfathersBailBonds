@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import Script from 'next/script'
+import { SITE_URL } from '@/lib/site'
 import './globals.css'
 
 const GA4_ID = process.env.NEXT_PUBLIC_GA4_ID || 'G-5K2DC15V7H'
@@ -13,24 +14,35 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "Godfather's Bail Bonds | Houston, TX | 713-224-3600",
-  description: 'Fast, professional bail bond services in Houston and Harris County. Open 24/7/365. Call 713-224-3600 anytime. Licensed bail bondsman — License #74603.',
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Godfather's Bail Bonds | Houston, TX | 713-224-3600",
+    template: "%s | Godfather's Bail Bonds",
+  },
+  description:
+    'Fast, professional bail bond services in Houston and Harris County. Open 24/7/365. Call 713-224-3600 anytime. Licensed bail bondsman — License #74603.',
   robots: { index: true, follow: true },
   icons: {
     icon: '/images/logo.png',
     apple: '/images/logo.png',
   },
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: "Godfather's Bail Bonds | Houston, TX | 713-224-3600",
-    description: "Fast, professional bail bond services in Houston and Harris County. Open 24/7/365. Call 713-224-3600 anytime. Licensed bail bondsman — License #74603.",
-    url: 'https://godfathersbailbonds.vercel.app',
+    description:
+      "Fast, professional bail bond services in Houston and Harris County. Open 24/7/365. Call 713-224-3600 anytime. Licensed bail bondsman — License #74603.",
+    url: '/',
     siteName: "Godfather's Bail Bonds",
     type: 'website',
+    locale: 'en_US',
   },
   twitter: {
-    card: 'summary',
+    card: 'summary_large_image',
     title: "Godfather's Bail Bonds | Houston, TX | 713-224-3600",
-    description: "Fast, professional bail bond services in Houston and Harris County. Open 24/7/365. Call 713-224-3600 anytime. Licensed bail bondsman — License #74603.",
+    description:
+      "Fast, professional bail bond services in Houston and Harris County. Open 24/7/365. Call 713-224-3600 anytime. Licensed bail bondsman — License #74603.",
   },
 }
 

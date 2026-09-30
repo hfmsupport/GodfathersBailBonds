@@ -1,7 +1,13 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { CheckCircle, Phone } from 'lucide-react'
+
+export const metadata: Metadata = {
+  title: 'Thank You | Message Received',
+  robots: { index: false, follow: false },
+}
 
 export default function ThankYou() {
   return (

@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Phone, Shield, Clock, MapPin, Award, ChevronRight } from 'lucide-react'
@@ -5,6 +6,14 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 
 export const revalidate = 3600
+
+export const metadata: Metadata = {
+  title: "About Godfather's Bail Bonds | Houston TX Bail Bondsman Since 1995",
+  description:
+    "Meet Steve Sondag, Houston's most trusted bail bondsman since 1995. Fully licensed Texas bail bondsman — License #74603. Serving Harris & Montgomery County 24/7.",
+  alternates: { canonical: '/about-us/' },
+  openGraph: { url: '/about-us/' },
+}
 
 const WHY_ITEMS = [
   {

@@ -1,3 +1,11 @@
 User-agent: *
 Allow: /
-Sitemap: https://godfathersbailbonds.vercel.app/sitemap.xml
+
+User-agent: ChatGPT-User
+Disallow: /
+User-agent: Google-Extended
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+
+Sitemap: https://godfathersbailbonds.us/sitemap.xml

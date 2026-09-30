@@ -4,7 +4,7 @@ import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
 import { cleanContent, splitFaqContent } from '@/lib/content'
 import { FaqAccordion } from '@/components/FaqAccordion'
-import { getRecentPosts } from '@/lib/wordpress'
+import { getRecentPosts, type SanityPost } from '@/lib/sanity'
 
 const SERVICE_LINKS = [
   { label: 'Harris County Bail Bonds', href: '/harris-county-bail-bonds/' },
@@ -14,26 +14,17 @@ const SERVICE_LINKS = [
   { label: 'What is Bail?',            href: '/what-is-bail/'              },
 ]
 
-interface WPPost {
-  title:            { rendered: string }
-  content:          { rendered: string }
-  date:             string
-  excerpt?:         { rendered: string }
-  slug?:            string
-  featuredImageUrl?: string | null
-}
-
-type RecentPost = {
-  id: number
-  slug: string
-  title: { rendered: string }
-  date: string
-}
-
-export async function BlogPostLayout({ post }: { post: WPPost }) {
-  const recentPosts: RecentPost[] = await getRecentPosts(5)
-  const cleaned = cleanContent(post.content.rendered)
+export async function BlogPostLayout({ post }: { post: SanityPost }) {
+  const recentPosts = await getRecentPosts(5)
+  const rawHtml = post.bodyHtml || ''
+  const cleaned = cleanContent(rawHtml)
   const { mainContent, faqItems } = splitFaqContent(cleaned)
+
+  const displayTitle = post.title
+    .replace(/&#\d+;/g, (m) => String.fromCharCode(parseInt(m.slice(2, -1), 10)))
+    .replace(/&amp;/g, '&')
+    .replace(/&#038;/g, '&')
+
   const dateStr = new Date(post.date).toLocaleDateString('en-US', {
     year: 'numeric', month: 'long', day: 'numeric',
   })
@@ -47,7 +38,7 @@ export async function BlogPostLayout({ post }: { post: WPPost }) {
         {post.featuredImageUrl ? (
           <img
             src={post.featuredImageUrl}
-            alt={post.title.rendered}
+            alt={displayTitle}
             className="absolute inset-0 w-full h-full object-cover"
           />
         ) : null}
@@ -69,10 +60,9 @@ export async function BlogPostLayout({ post }: { post: WPPost }) {
             <span>{dateStr}</span>
           </div>
 
-          <h1
-            className="anim-fade-left text-3xl md:text-4xl font-black leading-tight text-white"
-            dangerouslySetInnerHTML={{ __html: post.title.rendered }}
-          />
+          <h1 className="anim-fade-left text-3xl md:text-4xl font-black leading-tight text-white">
+            {displayTitle}
+          </h1>
           <div className="w-14 h-[3px] bg-[#C9A84C] mt-5 rounded-full" />
         </div>
       </section>
@@ -124,10 +114,12 @@ export async function BlogPostLayout({ post }: { post: WPPost }) {
                       className="block group"
                     >
                       <p className="text-gray-300 text-xs leading-snug group-hover:text-[#C9A84C] transition-colors line-clamp-2">
-                        <span dangerouslySetInnerHTML={{ __html: rp.title.rendered }} />
+                        {rp.title.replace(/&#\d+;/g, (m) => String.fromCharCode(parseInt(m.slice(2, -1), 10))).replace(/&amp;/g, '&').replace(/&#038;/g, '&')}
                       </p>
                       <p className="text-gray-600 text-[11px] mt-0.5">
-                        {new Date(rp.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                        {new Date(rp.date).toLocaleDateString('en-US', {
+                          month: 'short', day: 'numeric', year: 'numeric',
+                        })}
                       </p>
                     </Link>
                   ))}
