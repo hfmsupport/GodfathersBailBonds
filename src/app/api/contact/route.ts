@@ -6,7 +6,7 @@ const RECIPIENTS = [
   'support@shiveragents.com',
 ]
 
-const FROM = "Godfather's Bail Bonds <contact@godfathersbailbonds.us>"
+const FROM = "Godfather's Bail Bonds <support@godfathersbailbonds.us>"
 
 function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
