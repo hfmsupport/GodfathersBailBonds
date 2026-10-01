@@ -13,7 +13,7 @@ const pageContent = `
 <p>No one should spend more time in jail than necessary. If you or a loved one has been arrested in Houston, Godfather's Bail Bonds is here to help — quickly, professionally, and confidentially.</p>
 
 <h2>What Happens After You're Arrested?</h2>
-<p>Once you're arrested and booked, the court will set a bail amount. If you can't afford to pay it all, that's where we step in.</p>
+<p>Once you're arrested and booked, the court will set a <a href="/what-is-bail/" class="text-[#C9A84C] hover:underline">bail amount</a>. If you can't afford to pay it all, that's where we step in.</p>
 
 <h2>How Our Houston Bail Bond Services Work</h2>
 <ul>
@@ -25,17 +25,19 @@ const pageContent = `
 </ul>
 <p>Call (713) 224-3600 — available 24/7 to help you or a loved one get out of jail fast. We believe in second chances and treat every client with the dignity they deserve.</p>
 
-<h2>Frequently Asked Questions</h2>
-<p>Typically just 10% of the total bail. We offer payment plans and may waive collateral in some cases.</p>
-<p>Usually within 1 to 3 hours after paperwork is complete.</p>
-<p>Yes. We handle every case with complete confidentiality and care.</p>
-
 <h2>Why Choose Us?</h2>
 <p><strong>Flexibility:</strong> We provide bonds for most crimes, including drug, domestic violence, white collar, and DUI.</p>
 <p><strong>Locations:</strong> We service bail bonds in the Houston and Montgomery county area.</p>
 <p><strong>Assistance:</strong> Payment plans and financing is available.</p>
 <p><strong>Fast service:</strong> We're open 24 hours a day, 7 days a week.</p>
 <p>We don't mess around when it comes to getting your loved one home safe from jail. That is why we are dedicated to keeping our office open 24 hours a day, 7 days a week, and 365 days out of the year. In fact, our office hasn't closed in 30 years! We're open on weekends and holidays to better serve you in your time of need.</p>
+
+<h3>How much does a Houston bail bond cost?</h3>
+<p>Typically just 10% of the total bail. We offer payment plans and may waive collateral in some cases.</p>
+<h3>How long does release take in Houston?</h3>
+<p>Usually within 1 to 3 hours after paperwork is complete.</p>
+<h3>Is the bail bond process confidential?</h3>
+<p>Yes. We handle every case with complete confidentiality and care.</p>
 `
 
 export default function HoustonBailBonds() {

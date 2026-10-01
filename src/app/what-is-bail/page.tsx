@@ -60,13 +60,8 @@ const pageContent = `
 <p>The bail system is meant to be unbiased and begins by looking at the standard bail schedule, which is made up of standards set by the state or jurisdiction for each crime. The court may choose to customize it to fit the individual circumstance of the defendant. More and more courts are relying on a mathematical algorithm that uses many of the same factors a court does to assess the risk that the defendant will appear in court or will commit another crime. It is meant to not only streamline the bail process but to also take out any biases towards defendants or to specific crimes. This is not a computer making the decision on bail — it is merely a recommendation, as is the bail schedule, to the court which has the final decision.</p>
 
 <h2>Need Fast Bail Assistance in Houston, TX?</h2>
-<p>If you or a loved one has been arrested, understanding the bail process can be overwhelming. The experienced agents at Godfather's Bail Bonds are available 24/7 in Houston, TX to guide you through every step — from explaining bail amounts to securing fast release from jail. Our licensed bail bond professionals work quickly and compassionately to help you get back home while preparing for your court dates.</p>
+<p>If you or a loved one has been arrested, understanding the bail process can be overwhelming. The experienced agents at Godfather's Bail Bonds are available 24/7 in Houston, TX to guide you through <a href="/the-bail-bonds-process/" class="text-[#C9A84C] hover:underline">every step</a> — from explaining bail amounts to securing fast release from jail. Our licensed bail bond professionals work quickly and compassionately to help you get back home while preparing for your court dates.</p>
 <p>Call (713) 224-3600 — Godfather's Bail Bonds — available 24 hours a day, 7 days a week for immediate bail bond assistance in Houston, TX.</p>
-
-<h2>Frequently Asked Questions</h2>
-<p>Bail is a financial guarantee set by the court to ensure that a defendant appears for their scheduled court dates. It allows the defendant to be released from custody while awaiting trial.</p>
-<p>The common types of bail include cash bail, surety bonds, property bonds, and release on recognizance (ROR), where no payment is required.</p>
-<p>A bail bondsman provides a surety bond to the court on behalf of the defendant, covering the bail amount in exchange for a fee, typically a percentage of the bail.</p>
 
 <h2>Why Choose Us?</h2>
 <p><strong>Flexibility:</strong> We provide bonds for most crimes, including drug, domestic violence, white collar, and DUI.</p>
@@ -74,6 +69,13 @@ const pageContent = `
 <p><strong>Assistance:</strong> Payment plans and financing is available.</p>
 <p><strong>Fast service:</strong> We're open 24 hours a day, 7 days a week.</p>
 <p>We don't mess around when it comes to getting your loved one home safe from jail. That is why we are dedicated to keeping our office open 24 hours a day, 7 days a week, and 365 days out of the year. In fact, our office hasn't closed in 30 years! We're open on weekends and holidays to better serve you in your time of need.</p>
+
+<h3>What is bail and how does it work?</h3>
+<p>Bail is a financial guarantee set by the court to ensure that a defendant appears for their scheduled court dates. It allows the defendant to be released from custody while awaiting trial.</p>
+<h3>What are the different types of bail?</h3>
+<p>The common types of bail include cash bail, <a href="/types-of-bonds/" class="text-[#C9A84C] hover:underline">surety bonds</a>, property bonds, and release on recognizance (ROR), where no payment is required.</p>
+<h3>What does a bail bondsman do?</h3>
+<p>A bail bondsman provides a surety bond to the court on behalf of the defendant, covering the bail amount in exchange for a fee, typically a percentage of the bail.</p>
 `
 
 export default function WhatIsBail() {

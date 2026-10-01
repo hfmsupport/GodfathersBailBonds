@@ -25,12 +25,13 @@ const pageContent = `
 <h2>How the Bail Bond Process Works</h2>
 <ul>
 <li>You're arrested and booked</li>
-<li>The court sets a bail amount</li>
+<li>The court sets a <a href="/what-is-bail/" class="text-[#C9A84C] hover:underline">bail amount</a></li>
 <li>Call us immediately — we'll explain your options</li>
-<li>Pay a 10% non-refundable fee</li>
+<li>Co-sign documents and set up payment</li>
 <li>We post bail and arrange release within hours</li>
 <li>We keep you informed of all court dates</li>
 </ul>
+<p>For a complete walkthrough, see our <a href="/the-bail-bonds-process/" class="text-[#C9A84C] hover:underline">bail bond process guide</a>.</p>
 
 <h2>Payment &amp; Collateral Made Easy</h2>
 <p>We accept:</p>
@@ -41,17 +42,19 @@ const pageContent = `
 </ul>
 <p>We work with your situation to make bail affordable and fast.</p>
 
-<h2>Frequently Asked Questions</h2>
-<p>We work with Harris County Jail and all surrounding precincts.</p>
-<p>Usually within 1 to 3 hours, depending on jail processing.</p>
-<p>Yes, we guarantee complete privacy and professionalism.</p>
-
 <h2>Why Choose Us?</h2>
 <p><strong>Flexibility:</strong> We provide bonds for most crimes, including drug, domestic violence, white collar, and DUI.</p>
 <p><strong>Locations:</strong> We service bail bonds in the Houston and Montgomery county area.</p>
 <p><strong>Assistance:</strong> Payment plans and financing is available.</p>
 <p><strong>Fast service:</strong> We're open 24 hours a day, 7 days a week.</p>
 <p>We don't mess around when it comes to getting your loved one home safe from jail. That is why we are dedicated to keeping our office open 24 hours a day, 7 days a week, and 365 days out of the year. In fact, our office hasn't closed in 30 years! We're open on weekends and holidays to better serve you in your time of need.</p>
+
+<h3>Which jails do you serve in Harris County?</h3>
+<p>We work with Harris County Jail and all surrounding precincts.</p>
+<h3>How quickly can someone be released?</h3>
+<p>Usually within 1 to 3 hours, depending on jail processing.</p>
+<h3>Is the bail bond process confidential?</h3>
+<p>Yes, we guarantee complete privacy and professionalism.</p>
 `
 
 export default function HarrisCountyBailBonds() {
