@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
     default: "Godfather's Bail Bonds | Houston, TX | 713-224-3600",
+    // Pages whose title already contains the site name must use { absolute: '...' } to prevent duplication.
     template: "%s | Godfather's Bail Bonds",
   },
   description:

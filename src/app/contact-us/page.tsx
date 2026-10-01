@@ -8,7 +8,7 @@ import { ContactForm } from '@/components/ContactForm'
 export const revalidate = 3600
 
 export const metadata: Metadata = {
-  title: "Contact Godfather's Bail Bonds | 24/7 Houston TX | 713-224-3600",
+  title: { absolute: "Contact Godfather's Bail Bonds | 24/7 Houston TX | 713-224-3600" },
   description:
     "Contact Godfather's Bail Bonds in Houston, TX. Available 24/7/365 for fast bail bond help across Harris and Montgomery County. Call 713-224-3600 or send a message.",
   alternates: { canonical: '/contact-us/' },
